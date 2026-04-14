@@ -1,0 +1,11 @@
+
+apiVersion: policy/v1
+kind: PodDisruptionBudget
+metadata:
+  name: assessment-app-pdb
+  namespace: assessment
+spec:
+  minAvailable: 1
+  selector:
+    matchLabels:
+      app: assessment-app

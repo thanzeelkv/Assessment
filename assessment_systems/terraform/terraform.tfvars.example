@@ -1,0 +1,26 @@
+# Copy this file to terraform.tfvars and fill in values before running terraform apply
+
+project_name        = "aksassess"
+environment         = "dev"
+location            = "eastus"
+kubernetes_version  = "1.29"
+
+# Node pools
+system_node_count   = 2
+system_node_vm_size = "Standard_D2s_v3"
+user_node_min_count = 1
+user_node_max_count = 5
+user_node_vm_size   = "Standard_D4s_v3"
+
+# ACR
+acr_sku = "Standard"
+
+# Key Vault
+key_vault_sku = "standard"
+
+tags = {
+  ManagedBy   = "Terraform"
+  Project     = "AKS-Assessment"
+  Owner       = "DevOps"
+  CostCenter  = "Engineering"
+}

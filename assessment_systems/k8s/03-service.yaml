@@ -1,0 +1,17 @@
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: assessment-app-svc
+  namespace: assessment
+  labels:
+    app: assessment-app
+spec:
+  type: ClusterIP
+  selector:
+    app: assessment-app
+  ports:
+    - name: http
+      protocol: TCP
+      port: 80
+      targetPort: 8080
